@@ -1,0 +1,58 @@
+local function handleAnimationDetection(animIdsToStop, replacementAnimId)
+    local humanoid = game.Players.LocalPlayer.Character.Humanoid
+
+    local function onAnimPlayed(animationTrack)
+        local animId = tonumber(string.match(animationTrack.Animation.AnimationId, "%d+"))
+
+        for _, stopId in ipairs(animIdsToStop) do
+            if animId == stopId then
+                animationTrack:Stop()
+                local player = game.Players.LocalPlayer
+repeat wait() until player.Character.Humanoid
+local humanoid = player.Character.Humanoid
+local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
+local UserInputService = game:GetService("UserInputService")
+debounce = false -- Activate debounce
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://" .. replacementAnimId
+local playAnim = humanoid:LoadAnimation(anim)
+anim.AnimationId = "rbxassetid://0" -- don't change anything here
+
+spawn(function()
+    wait(1)
+    debounce = true
+end)
+
+playAnim:Play()
+playAnim:AdjustSpeed(1)
+
+local Players = game:GetService("Players")
+local Character = Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
+
+local animationPlayed = false -- Flag to track if the animation has already been played
+            end
+        end
+    end
+
+    humanoid.AnimationPlayed:Connect(onAnimPlayed)
+end
+
+-- First set of animations
+local firstAnimIdsToStop = {10469493270, 13532562418, 13491635433, 13370310513, 14004222985, 15259161390, 16515503507, 17889458563}
+local m1 = 17325510002
+handleAnimationDetection(firstAnimIdsToStop, m1)
+
+-- Second set of animations
+local secondAnimIdsToStop = {10469630950, 13532600125, 13296577783, 13390230973, 13997092940, 15240216931, 16515520431, 17889461810}
+local m2 = 17325513870
+handleAnimationDetection(secondAnimIdsToStop, m2)
+
+-- Third set of animations
+local thirdAnimIdsToStop = {10469639222, 13532604085, 13295919399, 13378751717, 14001963401, 15240176873, 16515448089, 17889471098}
+local m3 = 17325522388
+handleAnimationDetection(thirdAnimIdsToStop, m3)
+
+-- Fourth set of animations
+local fourthAnimIdsToStop = {10469643643, 13294471966, 13295936866, 13378708199, 14136436157, 15162694192, 16552234590, 17889290569}
+local m4 = 17325537719
+handleAnimationDetection(fourthAnimIdsToStop, m4)
