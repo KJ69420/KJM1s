@@ -6,7 +6,7 @@ tool.RequiresHandle = false  -- Set to true if you have a handle part
 tool.CanBeDropped = true     -- Change as needed
 
 -- Add a description or other properties
-tool.ToolTip = "idk"
+tool.ToolTip = "KJ Final Ride Five Seasons"
 
 tool.Activated:Connect(function()
     local player = game.Players.LocalPlayer
